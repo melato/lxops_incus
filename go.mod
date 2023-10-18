@@ -3,14 +3,13 @@ module melato.org/incusops
 go 1.18
 
 replace (
-	github.com/lxc/incus => /var/opt/SRC/incus
 	melato.org/cloudconfig => ../cloudconfig
 	melato.org/cloudconfigincus => ../cloudconfigincus
 	melato.org/lxops => ../lxops
 )
 
 require (
-	github.com/lxc/incus v0.0.0-20230930062653-ac6e6d2c140f
+	github.com/lxc/incus v0.0.0-20231018081032-c0b0dcad4815
 	melato.org/cloudconfigincus v0.0.0-00010101000000-000000000000
 	melato.org/command v1.0.1
 	melato.org/lxops v0.0.0-00010101000000-000000000000
