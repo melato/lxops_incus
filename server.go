@@ -415,3 +415,9 @@ func (t *InstanceServer) ExportImage(image string, path string) error {
 	s.Run("incus", "image", "export", image, path)
 	return s.Error()
 }
+
+func (t *InstanceServer) ImportImage(image string, path string) error {
+	s := &script.Script{Trace: Trace}
+	s.Run("incus", "image", "import", path, "--alias="+image)
+	return s.Error()
+}
