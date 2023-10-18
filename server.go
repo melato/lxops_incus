@@ -409,3 +409,9 @@ func (t *InstanceServer) GetInstanceAddresses(family string) ([]*srv.HostAddress
 	}
 	return addresses, nil
 }
+
+func (t *InstanceServer) ExportImage(image string, path string) error {
+	s := &script.Script{Trace: Trace}
+	s.Run("incus", "image", "export", image, path)
+	return s.Error()
+}
