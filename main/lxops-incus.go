@@ -6,8 +6,8 @@ import (
 
 	"melato.org/command"
 	"melato.org/command/usage"
-	"melato.org/incusops"
 	"melato.org/lxops"
+	"melato.org/lxops_incus"
 )
 
 //go:embed usage.yaml
@@ -18,7 +18,7 @@ var version string
 
 func main() {
 	lxops.InitOSTypes()
-	client := &incusops.Client{}
+	client := &lxops_incus.Client{}
 	cmd := lxops.RootCommand(client)
 	cmd.Command("version").NoConfig().RunMethod(func() { fmt.Println(version) })
 	usage.Apply(cmd, usageData)

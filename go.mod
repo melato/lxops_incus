@@ -1,4 +1,4 @@
-module melato.org/incusops
+module melato.org/lxops_incus
 
 go 1.18
 

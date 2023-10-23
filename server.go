@@ -1,4 +1,4 @@
-package incusops
+package lxops_incus
 
 import (
 	"fmt"
@@ -151,7 +151,7 @@ func (t *InstanceServer) NewConfigurer(instance string) (srv.InstanceConfigurer,
 func (t *InstanceServer) GetInstanceProfiles(name string) ([]string, error) {
 	c, _, err := t.Server.GetInstance(name)
 	if err != nil {
-		return nil, fmt.Errorf("%s: %w", err)
+		return nil, fmt.Errorf("%s: %w", name, err)
 	}
 	return c.Profiles, nil
 }

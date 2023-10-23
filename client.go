@@ -1,4 +1,4 @@
-package incusops
+package lxops_incus
 
 import (
 	"errors"
