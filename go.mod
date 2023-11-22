@@ -4,9 +4,9 @@ go 1.20
 
 require (
 	github.com/lxc/incus v0.0.0-20231027190220-0a5f3e4fd588
-	melato.org/cloudconfigincus v0.0.0-20231028203126-c4d151469b16
+	melato.org/cloudconfigincus v0.1.0
 	melato.org/command v1.0.1
-	melato.org/lxops v0.0.0-20231028201753-d961ddfe3aac
+	melato.org/lxops v0.2.0
 	melato.org/script v1.0.0
 )
 
@@ -31,5 +31,5 @@ require (
 	gopkg.in/square/go-jose.v2 v2.6.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	melato.org/cloudconfig v0.3.0 // indirect
-	melato.org/table3 v0.0.0-20220501091508-83fb75c200b0 // indirect
+	melato.org/table3 v0.1.0 // indirect
 )
