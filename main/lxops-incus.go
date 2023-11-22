@@ -19,6 +19,7 @@ var version = "dev"
 func main() {
 	lxops.InitOSTypes()
 	client := &lxops_incus.Client{}
+	lxops.InitConfigTypes()
 	cmd := lxops.RootCommand(client)
 	cmd.Command("version").NoConfig().RunMethod(func() {
 		fmt.Printf("lxops for %s, %s\n", client.ServerType(), version)
