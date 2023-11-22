@@ -13,14 +13,16 @@ import (
 //go:embed usage.yaml
 var usageData []byte
 
-//go:embed version
-var version string
+// set with -ldflags "-X 'main.version=...'"
+var version = "dev"
 
 func main() {
 	lxops.InitOSTypes()
 	client := &lxops_incus.Client{}
 	cmd := lxops.RootCommand(client)
-	cmd.Command("version").NoConfig().RunMethod(func() { fmt.Println(version) })
+	cmd.Command("version").NoConfig().RunMethod(func() {
+		fmt.Printf("lxops for %s, %s\n", client.ServerType(), version)
+	})
 	usage.Apply(cmd, usageData)
 	command.Main(cmd)
 }

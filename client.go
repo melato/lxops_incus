@@ -170,3 +170,7 @@ func (t *Client) ProjectInstanceServer(project string) (srv.InstanceServer, erro
 	}
 	return &InstanceServer{Server: server}, nil
 }
+
+func (t *Client) ServerType() string {
+	return "Incus"
+}
