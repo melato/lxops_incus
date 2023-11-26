@@ -5,7 +5,7 @@ go 1.20
 require (
 	github.com/lxc/incus v0.0.0-20231027190220-0a5f3e4fd588
 	melato.org/command v1.0.1
-	melato.org/lxops v0.3.0
+	melato.org/lxops v0.3.1
 	melato.org/script v1.0.0
 )
 
