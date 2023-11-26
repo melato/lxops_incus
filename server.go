@@ -5,7 +5,6 @@ import (
 	"strings"
 
 	"github.com/lxc/incus/shared/api"
-	"melato.org/cloudconfigincus"
 	"melato.org/lxops/srv"
 	"melato.org/lxops/yaml"
 	"melato.org/script"
@@ -16,21 +15,6 @@ var Trace bool = true
 func (t *InstanceServer) GetProfileNames() ([]string, error) {
 	return t.Server.GetProfileNames()
 }
-
-/*
-func (t *InstanceServer) ProfileExists(name string) (bool, error) {
-	profiles, err := t.GetProfileNames()
-	if err != nil {
-		return false, err
-	}
-	for _, profile := range profiles {
-		if profile == name {
-			return true, nil
-		}
-	}
-	return false, nil
-}
-*/
 
 func DevicesToMap(devices map[string]*srv.Device) map[string]map[string]string {
 	m := make(map[string]map[string]string)
@@ -145,7 +129,7 @@ func (t *InstanceServer) CopyInstance(cp *srv.Copy) error {
 }
 
 func (t *InstanceServer) NewConfigurer(instance string) (srv.InstanceConfigurer, error) {
-	return cloudconfigincus.NewInstanceConfigurer(t.Server, instance), nil
+	return NewInstanceConfigurer(t.Server, instance), nil
 }
 
 func (t *InstanceServer) GetInstanceProfiles(name string) ([]string, error) {
