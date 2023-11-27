@@ -87,7 +87,33 @@ func (t *InstanceServer) LaunchInstance(launch *srv.Launch) error {
 		return err
 	}
 	return nil
+}
 
+func (t *InstanceServer) RebuildInstance(image, instance string) error {
+	s := &script.Script{Trace: Trace}
+
+	s.Run("incus", "rebuild", "-f", image, instance)
+	if s.HasError() {
+		return s.Error()
+	}
+
+	state, _, err := t.Server.GetInstanceState(instance)
+	if err != nil {
+		return err
+	}
+
+	if state.Status != Running {
+		err = t.StartInstance(instance)
+		if err != nil {
+			return err
+		}
+	}
+
+	err = WaitForNetwork(t.Server, instance)
+	if err != nil {
+		return err
+	}
+	return nil
 }
 
 func (t *InstanceServer) CopyInstance(cp *srv.Copy) error {
