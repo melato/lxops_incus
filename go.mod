@@ -2,12 +2,10 @@ module melato.org/lxops_incus
 
 go 1.20
 
-replace melato.org/lxops => ../lxops
-
 require (
 	github.com/lxc/incus v0.3.0
 	melato.org/command v1.0.1
-	melato.org/lxops v0.3.2-0.20231127190915-54b1887e5e79
+	melato.org/lxops v0.3.2-0.20231128200634-333e183081c2
 	melato.org/script v1.0.0
 )
 
@@ -23,6 +21,7 @@ require (
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/zitadel/oidc/v2 v2.12.0 // indirect
 	golang.org/x/crypto v0.15.0 // indirect
+	golang.org/x/net v0.18.0 // indirect
 	golang.org/x/oauth2 v0.14.0 // indirect
 	golang.org/x/sys v0.14.0 // indirect
 	golang.org/x/term v0.14.0 // indirect
